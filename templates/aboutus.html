@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Logo Styling */
+        .logo-container {
+            background-color: #004080;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .logo-container img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: contain;
+            cursor: pointer;
+        }
+        /* Taskbar Styling */
+        .taskbar {
+            background-color: #004080;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 15px 20px;
+        }
+        .taskbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 22px;
+        }
+        .taskbar a:hover {
+            text-decoration: underline;
+        }
+        /* Page Content Styling */
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: #004080;
+        }
+        p {
+            text-align: justify;
+        }
+        .section {
+            margin-top: 40px;
+        }
+        .team-section, .partners-section {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        .team-member, .partner {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            flex: 1 1 calc(80% - 40px);
+            max-width: calc(80% - 40px);
+        }
+        .team-member img, .partner img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .team-member-details, .partner-details {
+            flex: 1;
+        }
+        .team-member-details h3, .partner-details h3 {
+            margin: 0;
+            font-size: 22px;
+            color: #004080;
+        }
+        .team-member-details p, .partner-details p {
+            margin: 10px 0 0;
+        }
+        .contact-info {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info p {
+            margin: 10px 0;
+        }
+        .contact-info a {
+            color: #004080;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo at the Top -->
+    <div class="logo-container">
+        <a href="{{ url_for('home_page') }}">
+            <img src="{{ url_for('static', filename='symbol.jpg') }}" alt="Logo">
+        </a>
+    </div>
+
+    <!-- Taskbar below the Logo -->
+    <div class="taskbar">
+        <a href="{{ url_for('resources_page') }}">Resources</a>
+        <a href="{{ url_for('projects_page') }}">Projects</a>
+        <a href="{{ url_for('activities_page') }}">Activities</a>
+        <a href="{{ url_for('gallery_page') }}">Gallery</a>
+        <a href="{{ url_for('aboutus_page') }}">About Us</a>
+        <a href="{{ url_for('login_page') }}">Logout</a>
+    </div>
+
+    <!-- Content of the About Us Page -->
+    <div class="content">
+        <h1>About Us</h1>
+        <p>
+            The National Council for Science & Technology Communication (NCSTC), under the Department of Science & Technology (DST), Government of India, collaborates with the National Institute of Technology Karnataka (NITK) to conduct a children-centric outreach program titled “Creating Awareness in Artificial Intelligence.” This initiative introduces secondary school children in Karnataka, Kerala, and Tamil Nadu to the fundamentals of AI through interactive sessions, real-world applications like object detection and sentiment analysis, and hands-on experiments. The program aims to make learning AI fun and engaging while preparing students for the future.
+        </p>
+        <h2>Our Vision</h2>
+        <p>
+            "Our vision is to create a future where young minds are empowered with the knowledge and skills to thrive in a technology-driven world. We aim to demystify Artificial Intelligence (AI) and make it accessible to students, fostering curiosity, creativity, and innovation in the field of AI."
+        </p>
+
+        <h2>Meet the Team</h2>
+        <div class="team-section">
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='img8.jpg') }}" alt="Dr. Anand Kumar M">
+                <div class="team-member-details">
+                    <h3>Dr. Anand Kumar M</h3>
+                    <p><strong>Principal Investigator</strong></p>
+                    <p>Associate Professor, Department of Information Technology, National Institute of Technology Karnataka, SCaLAR Lab</p>
+                    <p>
+                        Dr. M. Anand Kumar’s research focuses on Natural Language Processing (NLP), Machine Translation for Indian languages, and Deep Learning for Text Analytics.
+                        He has published over 185 Scopus-indexed papers and received around 2200 citations on Google Scholar.
+                        He has led significant projects, including the "Computing Tools for Tamil Language Learning" funded by the Tamil Nadu government,
+                        the "Tamil-Malayalam Subtitle Translation System" for Sharp Software, and the "Q&A Extraction from Unstructured Documents" with EduMinster (U.S.).
+                        He is also a SERB-CRG awardee (2023-2026) for a project on "Deep Explainable Framework for Legal Text Retrieval and Summarization."
+                    </p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='img9.jpg') }}" alt="Dr. Bijuna C Mohan">
+                <div class="team-member-details">
+                    <h3>Dr. Bijuna C Mohan</h3>
+                    <p><strong>Co-Investigator</strong></p>
+                    <p>Associate Professor, School of Humanities, Social Sciences and Management</p>
+                    <p>
+                        Received the ABP News National B –School Award 2012 for Best Professor Teaching Advertising Management.
+                        Areas of expertise include:
+                        <ul>
+                            <li>Marketing Management</li>
+                            <li>Brand Management</li>
+                            <li>Consumer Behaviour</li>
+                            <li>Advertising and Sales Promotion</li>
+                            <li>Marketing Analytics</li>
+                            <li>Services Marketing</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section">Our Partners and Supporters</h2>
+        <div class="partners-section">
+            <div class="partner">
+                <img src="{{ url_for('static', filename='csd.jpg') }}" alt="CSD">
+                <div class="partner-details">
+                    <h3>Centre for System Design (CSD)</h3>
+                    <p>
+                        The Centre for System Design (A Centre of Excellence at NITK Surathkal) envisages an interdisciplinary approach and means for realization of successful engineering systems.
+                        Key components include system modeling & simulation, understanding system dynamics, system optimization, virtual and physical experimentation.
+                        The Centre facilitates an environment for solving modern engineering problems that transcend traditional boundaries, ensuring integration to meet overall design objectives.
+                    </p>
+                </div>
+            </div>
+            <div class="partner">
+                <img src="{{ url_for('static', filename='image.jpg') }}" alt="DST">
+                <div class="partner-details">
+                    <h3>Department of Science & Technology (DST)</h3>
+                    <p>
+                        The Department of Science & Technology (DST) was established in May 1971 with the objective of promoting new areas of science and technology.
+                        As a nodal department of the Government of India, DST is responsible for organizing, coordinating, and promoting S&T activities across the country.
+                        DST has sponsored this project to ensure the dissemination of AI knowledge and the development of scientific temperament among students.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section">Contact Us</h2>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:csd.ra01@nitk.edu.in">csd.ra01@nitk.edu.in</a></p>
+            <p>LinkedIn: <a href="https://something.linkdin" target="_blank">something.linkdin</a></p>
+        </div>
+    </div>
+
+</body>
+</html>

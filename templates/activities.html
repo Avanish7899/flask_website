@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        /* Logo Styling */
+        .logo-container {
+            background-color: #004080;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .logo-container img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: contain;
+            cursor: pointer;
+        }
+        /* Taskbar Styling */
+        .taskbar {
+            background-color: #004080;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 20px;
+        }
+        .taskbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 25px;
+            font-size: 22px;
+        }
+        .taskbar a:hover {
+            text-decoration: underline;
+        }
+        .quiz-section {
+            padding: 20px;
+            background-color: white;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .quiz-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 10px;
+        }
+        .submit-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #218838;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .incorrect {
+            color: red;
+        }
+        .correct {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo at the Top -->
+    <div class="logo-container">
+        <a href="{{ url_for('home_page') }}">
+            <img src="{{ url_for('static', filename='symbol.jpg') }}" alt="Logo">
+        </a>
+    </div>
+
+    <!-- Taskbar below the Logo -->
+    <div class="taskbar">
+        <a href="{{ url_for('resources_page') }}">Resources</a>
+        <a href="{{ url_for('projects_page') }}">Projects</a>
+        <a href="{{ url_for('activities_page') }}">Activities</a>
+        <a href="{{ url_for('gallery_page') }}">Gallery</a>
+        <a href="{{ url_for('aboutus_page') }}">About Us</a>
+        <a href="{{ url_for('login_page') }}">Logout</a>
+    </div>
+
+    <!-- QUIZ LEVEL-1 -->
+    <div class="quiz-section">
+        <div class="quiz-title">QUIZ LEVEL-1</div>
+        <form id="quiz1">
+            <div class="question">1. What does AI stand for?</div>
+            <input type="radio" name="q1" value="A">A) Artificial Information<br>
+            <input type="radio" name="q1" value="B">B) Animal Intelligence<br>
+            <input type="radio" name="q1" value="C">C) Artificial Intelligence<br>
+            <input type="radio" name="q1" value="D">D) Advanced Information<br><br>
+
+            <div class="question">2. Which of the following is an example of AI?</div>
+            <input type="radio" name="q2" value="A">A) A bicycle<br>
+            <input type="radio" name="q2" value="B">B) A robot that can recognize your voice<br>
+            <input type="radio" name="q2" value="C">C) A tree<br>
+            <input type="radio" name="q2" value="D">D) A pencil<br><br>
+
+            <div class="question">3. What is the main purpose of Machine Learning (ML)?</div>
+            <input type="radio" name="q3" value="A">A) To teach humans how to learn<br>
+            <input type="radio" name="q3" value="B">B) To make computers draw pictures<br>
+            <input type="radio" name="q3" value="C">C) To let computers learn from data<br>
+            <input type="radio" name="q3" value="D">D) To make websites faster<br><br>
+
+            <div class="question">4. Which of these AI tools can help translate languages?</div>
+            <input type="radio" name="q4" value="A">A) A dictionary book<br>
+            <input type="radio" name="q4" value="B">B) Google Translate<br>
+            <input type="radio" name="q4" value="C">C) A textbook<br>
+            <input type="radio" name="q4" value="D">D) A map<br><br>
+
+            <div class="question">5. How do computers learn in Machine Learning?</div>
+            <input type="radio" name="q5" value="A">A) By reading books<br>
+            <input type="radio" name="q5" value="B">B) By following recipes<br>
+            <input type="radio" name="q5" value="C">C) By playing games<br>
+            <input type="radio" name="q5" value="D">D) By analyzing lots of data<br><br>
+
+            <div class="question">6. Which of the following is a popular AI assistant?</div>
+            <input type="radio" name="q6" value="A">A) Alexa<br>
+            <input type="radio" name="q6" value="B">B) Bicycle<br>
+            <input type="radio" name="q6" value="C">C) Oven<br>
+            <input type="radio" name="q6" value="D">D) Calculator<br><br>
+
+            <div class="question">7. Which of these is NOT an example of AI?</div>
+            <input type="radio" name="q7" value="A">A) A game that can play chess<br>
+            <input type="radio" name="q7" value="B">B) A car that drives itself<br>
+            <input type="radio" name="q7" value="C">C) A clock that tells time<br>
+            <input type="radio" name="q7" value="D">D) A chatbot that answers questions<br><br>
+
+            <div class="question">8. What is a computer program that can learn and improve over time called?</div>
+            <input type="radio" name="q8" value="A">A) Robot<br>
+            <input type="radio" name="q8" value="B">B) Supercomputer<br>
+            <input type="radio" name="q8" value="C">C) Machine Learning Model<br>
+            <input type="radio" name="q8" value="D">D) Calculator<br><br>
+
+            <div class="question">9. Which of these can a self-driving car use to navigate the road?</div>
+            <input type="radio" name="q9" value="A">A) A paper map<br>
+            <input type="radio" name="q9" value="B">B) Sensors and cameras<br>
+            <input type="radio" name="q9" value="C">C) A phone call<br>
+            <input type="radio" name="q9" value="D">D) A flashlight<br><br>
+
+            <div class="question">10. Which of these is a common use of AI in everyday life?</div>
+            <input type="radio" name="q10" value="A">A) AI helping farmers water their crops<br>
+            <input type="radio" name="q10" value="B">B) AI teaching children how to read<br>
+            <input type="radio" name="q10" value="C">C) AI suggesting songs or movies you might like<br>
+            <input type="radio" name="q10" value="D">D) AI making ice cream<br><br>
+
+            <button type="button" class="submit-button" onclick="submitQuiz('quiz1', quiz1Answers, 'result1')">Submit Quiz Level-1</button>
+            <div class="result" id="result1"></div>
+        </form>
+    </div>
+
+    <!-- QUIZ LEVEL-2 -->
+    <div class="quiz-section">
+        <div class="quiz-title">QUIZ LEVEL-2</div>
+        <form id="quiz2">
+            <div class="question">1. What is an example of image recognition using AI?</div>
+            <input type="radio" name="q1" value="A">A) A computer reading a story<br>
+            <input type="radio" name="q1" value="B">B) A phone unlocking when it sees your face<br>
+            <input type="radio" name="q1" value="C">C) A clock telling the time<br>
+            <input type="radio" name="q1" value="D">D) A printer printing a picture<br><br>
+
+            <div class="question">2. What do we call it when a computer can understand natural human language?</div>
+            <input type="radio" name="q2" value="A">A) Computer Programming<br>
+            <input type="radio" name="q2" value="B">B) Natural Language Processing (NLP)<br>
+            <input type="radio" name="q2" value="C">C) Drawing Skills<br>
+            <input type="radio" name="q2" value="D">D) Voice Echo<br><br>
+
+            <div class="question">3. Why do we need AI in healthcare?</div>
+            <input type="radio" name="q3" value="A">A) To play games with patients<br>
+            <input type="radio" name="q3" value="B">B) To help doctors find diseases quickly<br>
+            <input type="radio" name="q3" value="C">C) To decorate hospitals<br>
+            <input type="radio" name="q3" value="D">D) To teach patients how to swim<br><br>
+
+            <div class="question">4. What is "speech recognition" in AI?</div>
+            <input type="radio" name="q4" value="A">A) Teaching computers to write stories<br>
+            <input type="radio" name="q4" value="B">B) Understanding words spoken by humans<br>
+            <input type="radio" name="q4" value="C">C) Making computers sing songs<br>
+            <input type="radio" name="q4" value="D">D) Showing pictures on a screen<br><br>
+
+            <div class="question">5. Which of the following is true about AI?</div>
+            <input type="radio" name="q5" value="A">A) AI can never make mistakes.<br>
+            <input type="radio" name="q5" value="B">B) AI can learn new things if given data.<br>
+            <input type="radio" name="q5" value="C">C) AI is just a fancy word for robots.<br>
+            <input type="radio" name="q5" value="D">D) AI is only used in science fiction movies.<br><br>
+
+            <div class="question">6. What is a "dataset" in Machine Learning?</div>
+            <input type="radio" name="q6" value="A">A) A collection of data used for training<br>
+            <input type="radio" name="q6" value="B">B) A type of computer game<br>
+            <input type="radio" name="q6" value="C">C) A drawing of a computer<br>
+            <input type="radio" name="q6" value="D">D) A TV show about AI<br><br>
+
+            <div class="question">7. Why do we need a lot of data for Machine Learning?</div>
+            <input type="radio" name="q7" value="A">A) To make computers heavier<br>
+            <input type="radio" name="q7" value="B">B) To help the computer learn patterns and make better decisions<br>
+            <input type="radio" name="q7" value="C">C) To keep the computer busy<br>
+            <input type="radio" name="q7" value="D">D) To make the computer change colors<br><br>
+
+            <div class="question">8. What is face recognition technology used for?</div>
+            <input type="radio" name="q8" value="A">A) To change the color of your hair<br>
+            <input type="radio" name="q8" value="B">B) To identify and recognize faces in photos or videos<br>
+            <input type="radio" name="q8" value="C">C) To translate languages<br>
+            <input type="radio" name="q8" value="D">D) To send emails faster<br><br>
+
+            <div class="question">9. What kind of data might an AI use to recognize animals in pictures?</div>
+            <input type="radio" name="q9" value="A">A) Animal noises<br>
+            <input type="radio" name="q9" value="B">B) Drawings of animals<br>
+            <input type="radio" name="q9" value="C">C) Lots of photos of animals<br>
+            <input type="radio" name="q9" value="D">D) Stories about animals<br><br>
+
+            <div class="question">10. Which of the following is NOT something AI can do?</div>
+            <input type="radio" name="q10" value="A">A) Predict weather patterns<br>
+            <input type="radio" name="q10" value="B">B) Teach a computer to speak every language instantly<br>
+            <input type="radio" name="q10" value="C">C) Help doctors diagnose diseases<br>
+            <input type="radio" name="q10" value="D">D) Recommend new songs or videos<br><br>
+
+            <button type="button" class="submit-button" onclick="submitQuiz('quiz2', quiz2Answers, 'result2')">Submit Quiz Level-2</button>
+            <div class="result" id="result2"></div>
+        </form>
+    </div>
+
+    <!-- QUIZ LEVEL-3 -->
+    <div class="quiz-section">
+        <div class="quiz-title">QUIZ LEVEL-3</div>
+        <form id="quiz3">
+            <div class="question">1. What is the role of a training dataset in machine learning?</div>
+            <input type="radio" name="q1" value="A">A) To make the computer faster<br>
+            <input type="radio" name="q1" value="B">B) To provide examples for the model to learn patterns<br>
+            <input type="radio" name="q1" value="C">C) To store images and videos<br>
+            <input type="radio" name="q1" value="D">D) To make the computer look better<br><br>
+
+            <div class="question">2. What does the term “neural network” refer to in AI?</div>
+            <input type="radio" name="q2" value="A">A network of computers connected by wires<br>
+            <input type="radio" name="q2" value="B">A method of communication between robots<br>
+            <input type="radio" name="q2" value="C">A set of algorithms inspired by the human brain that can recognize patterns<br>
+            <input type="radio" name="q2" value="D">A computer program that sends emails<br><br>
+
+            <div class="question">3. In machine learning, what is a “model”?</div>
+            <input type="radio" name="q3" value="A">A blueprint for building computers<br>
+            <input type="radio" name="q3" value="B">A physical device used to store data<br>
+            <input type="radio" name="q3" value="C">A mathematical representation that makes predictions based on data<br>
+            <input type="radio" name="q3" value="D">A tool to create computer games<br><br>
+
+            <div class="question">4. What is the purpose of testing data in machine learning?</div>
+            <input type="radio" name="q4" value="A">A) To train the model with new data<br>
+            <input type="radio" name="q4" value="B">B) To change the rules of the model<br>
+            <input type="radio" name="q4" value="C">C) To evaluate how well the model performs on unseen data<br>
+            <input type="radio" name="q4" value="D">D) To make the model run faster<br><br>
+
+            <div class="question">5. Which type of AI is used for recognizing spoken words and turning them into text?</div>
+            <input type="radio" name="q5" value="A">A) Image Recognition<br>
+            <input type="radio" name="q5" value="B">B) Natural Language Processing (NLP)<br>
+            <input type="radio" name="q5" value="C">C) Data Mining<br>
+            <input type="radio" name="q5" value="D">D) Speech Synthesis<br><br>
+
+            <div class="question">6. Which of these is an example of AI in video games?</div>
+            <input type="radio" name="q6" value="A">A) Characters that can follow you or react to your actions<br>
+            <input type="radio" name="q6" value="B">B) The controller used to play the game<br>
+            <input type="radio" name="q6" value="C">C) The console that displays the game<br>
+            <input type="radio" name="q6" value="D">D) The box the game comes in<br><br>
+
+            <div class="question">7. What is a common problem with using too small a training dataset for a machine learning model?</div>
+            <input type="radio" name="q7" value="A">A) The model will be too expensive to run<br>
+            <input type="radio" name="q7" value="B">B) The model might not learn enough patterns and generalize poorly<br>
+            <input type="radio" name="q7" value="C">C) The model will become too fast and overheat<br>
+            <input type="radio" name="q7" value="D">D) The model will never stop training<br><br>
+
+            <div class="question">8. Why do we need "labels" in some machine learning tasks?</div>
+            <input type="radio" name="q8" value="A">A) To make the data look prettier<br>
+            <input type="radio" name="q8" value="B">B) To tell the computer what each piece of data means<br>
+            <input type="radio" name="q8" value="C">C) To print the data on paper<br>
+            <input type="radio" name="q8" value="D">D) To make the computer run faster<br><br>
+
+            <div class="question">9. What is the purpose of a recommendation system?</div>
+            <input type="radio" name="q9" value="A">A) To suggest movies, music, or products you might like<br>
+            <input type="radio" name="q9" value="B">B) To help doctors with surgery<br>
+            <input type="radio" name="q9" value="C">C) To clean your room<br>
+            <input type="radio" name="q9" value="D">D) To find the nearest gas station<br><br>
+
+            <div class="question">10. What is "testing data" used for in machine learning?</div>
+            <input type="radio" name="q10" value="A">A) To play games with the computer<br>
+            <input type="radio" name="q10" value="B">B) To teach the computer new things<br>
+            <input type="radio" name="q10" value="C">C) To check if the computer has learned correctly<br>
+            <input type="radio" name="q10" value="D">D) To make the computer run faster<br><br>
+
+            <button type="button" class="submit-button" onclick="submitQuiz('quiz3', quiz3Answers, 'result3')">Submit Quiz Level-3</button>
+            <div class="result" id="result3"></div>
+        </form>
+    </div>
+
+    <script>
+        // Answers for Quiz Level 1
+        const quiz1Answers = {
+            q1: 'C',
+            q2: 'B',
+            q3: 'C',
+            q4: 'B',
+            q5: 'D',
+            q6: 'A',
+            q7: 'C',
+            q8: 'C',
+            q9: 'B',
+            q10: 'C'
+        };
+
+        // Answers for Quiz Level 2
+        const quiz2Answers = {
+            q1: 'B',
+            q2: 'B',
+            q3: 'B',
+            q4: 'B',
+            q5: 'B',
+            q6: 'A',
+            q7: 'B',
+            q8: 'B',
+            q9: 'C',
+            q10: 'B'
+        };
+
+        // Answers for Quiz Level 3
+        const quiz3Answers = {
+            q1: 'B',
+            q2: 'C',
+            q3: 'C',
+            q4: 'C',
+            q5: 'B',
+            q6: 'A',
+            q7: 'B',
+            q8: 'B',
+            q9: 'A',
+            q10: 'C'
+        };
+
+        // Function to calculate quiz results and display incorrect answers
+        function submitQuiz(quizId, answers, resultId) {
+            let form = document.getElementById(quizId);
+            let score = 0;
+            let totalQuestions = Object.keys(answers).length;
+            let resultHTML = "";
+
+            for (let question in answers) {
+                let userAnswer = form.elements[question].value;
+                if (userAnswer === answers[question]) {
+                    score++;
+                    resultHTML += `<div class="correct">Question ${question.slice(1)}: Correct</div>`;
+                } else {
+                    resultHTML += `<div class="incorrect">Question ${question.slice(1)}: Incorrect. Correct Answer: ${answers[question]}</div>`;
+                }
+            }
+
+            resultHTML += `<div class="result">Your score is ${score}/${totalQuestions}</div>`;
+            document.getElementById(resultId).innerHTML = resultHTML;
+        }
+    </script>
+
+</body>
+</html>

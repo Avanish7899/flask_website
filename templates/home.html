@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        /* Logo Styling */
+        .logo-container {
+            background-color: #004080;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .logo-container img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: contain;
+            cursor: pointer;
+        }
+        /* Taskbar Styling */
+        .taskbar {
+            background-color: #004080;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 15px 20px;
+        }
+        .taskbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 22px; /* Increased font size */
+        }
+        .taskbar a:hover {
+            text-decoration: underline;
+        }
+        /* Content Styling */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .text-section {
+            flex: 1 1 50%;
+            padding: 20px;
+            text-align: justify;
+            font-size: 20px; /* Increased font size */
+            line-height: 1.6; /* Improved readability */
+        }
+        .image-section {
+            flex: 1 1 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+        .image-section img {
+            max-width: 80%; /* Reduced size to 80% of the original */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0; /* Hidden initially */
+            transform: translateY(50px); /* Positioned below initially */
+            transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth animation */
+        }
+        .image-section img.roll-in {
+            opacity: 1; /* Visible when scrolled into view */
+            transform: translateY(0); /* Move to original position */
+        }
+        .section-title {
+            color: #004080;
+            font-size: 30px; /* Increased title font size */
+            margin-bottom: 15px;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: disc inside;
+            font-size: 20px; /* Increased font size for list */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo at the Top -->
+    <div class="logo-container">
+        <a href="{{ url_for('home_page') }}">
+            <img src="{{ url_for('static', filename='symbol.jpg') }}" alt="Logo">
+        </a>
+    </div>
+
+    <!-- Taskbar below the Logo -->
+    <div class="taskbar">
+        <a href="{{ url_for('resources_page') }}">Resources</a>
+        <a href="{{ url_for('projects_page') }}">Projects</a>
+        <a href="{{ url_for('activities_page') }}">Activities</a>
+        <a href="{{ url_for('gallery_page') }}">Gallery</a>
+        <a href="{{ url_for('aboutus_page') }}">About Us</a>
+        <a href="{{ url_for('login_page') }}">Logout</a>
+    </div>
+
+    <!-- Content of the Home Page -->
+    <div class="content">
+        <div class="text-section">
+            <h2 class="section-title">Welcome to Our Initiative</h2>
+            <p>
+                Welcome to our initiative dedicated to creating awareness and fostering interest in Artificial Intelligence (AI) among school students. We believe in the transformative power of AI to shape the future, and our mission is to ensure that the next generation is equipped with the knowledge, skills, and curiosity to lead in this dynamic field.
+            </p>
+
+            <h3 class="section-title">Our Mission</h3>
+            <p>
+                To introduce secondary and higher secondary school students to the fundamentals of AI through interactive, hands-on experiences. By making AI concepts accessible and engaging, we aim to spark curiosity, inspire innovation, and prepare young minds to thrive in a technology-driven world.
+            </p>
+        </div>
+        <div class="image-section">
+            <img src="{{ url_for('static', filename='img6.jpg') }}" alt="AI in Education">
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="image-section">
+            <img src="{{ url_for('static', filename='img5.jpg') }}" alt="AI Workshop">
+        </div>
+        <div class="text-section">
+            <h3 class="section-title">What We Do</h3>
+            <ul>
+                <li>Awareness Programs: Engaging workshops and demonstrations tailored to showcase the real-world applications of AI in fields like Computer Vision, Natural Language Processing, and Robotics.</li>
+                <li>Hands-on Experiments: Step-by-step guided experiments that allow students to explore and build AI-based solutions.</li>
+                <li>Student Projects: Encouraging students to design their own AI applications and showcase them in science exhibitions.</li>
+                <li>Resource Accessibility: A dedicated online platform offering curated content, tools, and learning materials for students and educators.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="text-section">
+            <h3 class="section-title">Our Impact</h3>
+            <p>
+                We aim to empower 3,000 students across six districts and inspire 300 students to actively participate in developing innovative AI projects. Our vision is to nurture scientifically inclined, ethically aware, and technologically proficient individuals.
+            </p>
+
+            <h3 class="section-title">Why AI for Students?</h3>
+            <p>
+                Artificial Intelligence is no longer a future concept—it is a present reality influencing every aspect of our lives. By introducing students to AI at an early stage, we:
+            </p>
+            <ul>
+                <li>Enhance critical thinking and problem-solving skills.</li>
+                <li>Encourage exploration of STEM fields.</li>
+                <li>Equip them to navigate and excel in a digital-first world.</li>
+            </ul>
+        </div>
+        <div class="image-section">
+            <img src="{{ url_for('static', filename='img3.jpg') }}" alt="AI Impact">
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="image-section">
+            <img src="{{ url_for('static', filename='img4.jpg') }}" alt="Future AI Innovators">
+        </div>
+        <div class="text-section">
+            <h3 class="section-title">Join Us in Shaping the Future</h3>
+            <p>
+                Through our outreach efforts, we are not only nurturing a passion for technology but also building a sustainable framework for learning and innovation. Together, let’s make AI accessible, exciting, and empowering for the leaders of tomorrow.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to add "roll-in" class when images scroll into view
+        document.addEventListener("scroll", function() {
+            const images = document.querySelectorAll(".image-section img");
+            images.forEach(img => {
+                const rect = img.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 50) {
+                    img.classList.add("roll-in");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

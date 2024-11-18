@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        /* Logo Styling */
+        .logo-container {
+            background-color: #004080;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .logo-container img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: contain;
+            cursor: pointer;
+        }
+        /* Taskbar Styling */
+        .taskbar {
+            background-color: #004080;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 20px;
+        }
+        .taskbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 25px;
+            font-size: 22px;
+        }
+        .taskbar a:hover {
+            text-decoration: underline;
+        }
+        /* Projects Section Styling */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .project-item {
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .project-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .project-item h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #004080;
+        }
+        .project-item a {
+            display: block;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo at the Top -->
+    <div class="logo-container">
+        <a href="{{ url_for('home_page') }}">
+            <img src="{{ url_for('static', filename='symbol.jpg') }}" alt="Logo">
+        </a>
+    </div>
+
+    <!-- Taskbar below the Logo -->
+    <div class="taskbar">
+        <a href="{{ url_for('resources_page') }}">Resources</a>
+        <a href="{{ url_for('projects_page') }}">Projects</a>
+        <a href="{{ url_for('activities_page') }}">Activities</a>
+        <a href="{{ url_for('gallery_page') }}">Gallery</a>
+        <a href="{{ url_for('aboutus_page') }}">About Us</a>
+        <a href="{{ url_for('login_page') }}">Logout</a>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-container">
+        <!-- Project 1 -->
+        <div class="project-item">
+            <a href="https://www.youtube.com/watch?v=l21o1rJkaT0" target="_blank">
+                <img src="{{ url_for('static', filename='balloon.jpg') }}" alt="Balloon Pop Project">
+                <h3>Balloon Pop Using Computer Vision</h3>
+            </a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-item">
+            <a href="https://www.youtube.com/watch?v=q6FK1ztCjig" target="_blank">
+                <img src="{{ url_for('static', filename='number.jpg') }}" alt="Number Identification Project">
+                <h3>Number Identification</h3>
+            </a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-item">
+            <a href="https://www.youtube.com/watch?v=q6FK1ztCjig" target="_blank">
+                <img src="{{ url_for('static', filename='person.jpg') }}" alt="Person Recognition Project">
+                <h3>Person Recognition</h3>
+            </a>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-item">
+            <a href="https://www.youtube.com/watch?v=q6FK1ztCjig" target="_blank">
+                <img src="{{ url_for('static', filename='signature.jpg') }}" alt="Signature Classification Project">
+                <h3>Signature Classification</h3>
+            </a>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-item">
+            <a href="https://www.youtube.com/watch?v=l21o1rJkaT0" target="_blank">
+                <img src="{{ url_for('static', filename='trash.jpg') }}" alt="Trash Identification Project">
+                <h3>Trash Identification</h3>
+            </a>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-item">
+            <a href="https://www.youtube.com/watch?v=l21o1rJkaT0" target="_blank">
+                <img src="{{ url_for('static', filename='volume.jpg') }}" alt="Volume Control Project">
+                <h3>Volume Control Using Computer Vision</h3>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

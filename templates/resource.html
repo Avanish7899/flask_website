@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        /* Logo Styling */
+        .logo-container {
+            background-color: #004080;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .logo-container img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: contain;
+            cursor: pointer;
+        }
+        /* Taskbar Styling */
+        .taskbar {
+            background-color: #004080;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 20px;
+        }
+        .taskbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 25px; /* Increased spacing between options */
+            font-size: 22px; /* Increased font size */
+        }
+        .taskbar a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo at the Top -->
+    <div class="logo-container">
+        <!-- Clicking the logo will return to home.html -->
+        <a href="{{ url_for('home_page') }}">
+            <img src="{{ url_for('static', filename='symbol.jpg') }}" alt="Logo">
+        </a>
+    </div>
+
+    <!-- Taskbar below the Logo -->
+    <div class="taskbar">
+        <!-- Taskbar Links -->
+        <a href="{{ url_for('resources_page') }}">Resources</a>
+        <a href="{{ url_for('projects_page') }}">Projects</a>
+        <a href="{{ url_for('activities_page') }}">Activities</a>
+        <a href="{{ url_for('gallery_page') }}">Gallery</a>
+        <a href="{{ url_for('aboutus_page') }}">About Us</a>
+        <a href="{{ url_for('login_page') }}">Logout</a>
+    </div>
+
+    <!-- Content of the Resources Page -->
+    <div style="padding: 20px;">
+        <h1>Resources will be available here soon</h1>
+        <p>Stay tuned for updates on resources and materials to support AI awareness and learning.</p>
+    </div>
+
+</body>
+</html>
